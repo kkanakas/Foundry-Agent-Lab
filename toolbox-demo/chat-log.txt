@@ -1,0 +1,257 @@
+Creating toolbox version: demo-toolbox
+  Tools: github-issues + github-repos (curated subsets)
+✓ Toolbox "demo-toolbox" version 12 created
+
+Next step: run chat.py to interact with the toolbox tools.
+
+Connecting to toolbox MCP endpoint...
+✓ Connected! 46 tools on server, 12 curated:
+    • github___add_issue_comment: Add a comment to a specific issue in a GitHub repository. Use this tool to add comments to pull requests as well (in this case pass pull request number as issue_number), but only if user is not asking specifically to add review comments.
+    • github___get_file_contents: Get the contents of a file or directory from a GitHub repository
+    • github___get_label: Get a specific label from a repository.
+    • github___issue_read: Get information about a specific issue in a GitHub repository.
+    • github___issue_write: Create a new or update an existing issue in a GitHub repository.
+    • github___list_branches: List branches in a GitHub repository
+    • github___list_commits: Get list of commits of a branch in a GitHub repository. Returns at least 30 results per page by default, but can return more if specified using the perPage parameter (up to 100).
+    • github___list_issues: List issues in a GitHub repository. For pagination, use the 'endCursor' from the previous response's 'pageInfo' in the 'after' parameter.
+    • github___list_tags: List git tags in a GitHub repository
+    • github___search_code: Fast and precise code search across ALL GitHub repositories using GitHub's native search engine. Best for finding exact symbols, functions, classes, or specific code patterns.
+    • github___search_issues: Search for issues in GitHub repositories using issues search syntax already scoped to is:issue
+    • github___search_repositories: Find GitHub repositories by name, description, readme, topics, or other metadata. Perfect for discovering projects, finding examples, or locating specific repositories across GitHub.
+
+============================================================
+  Toolbox Demo — Centralized Tool Governance
+============================================================
+
+  Toolbox: demo-toolbox
+  Model:   model-router
+  Tools:   12 curated (issues + repos)
+
+  Try: "Search for issues labeled bug in microsoft/vscode"
+       "List repos for microsoft on GitHub"
+  Type 'exit' or 'quit' to end the session.
+
+------------------------------------------------------------
+
+You: Search for repositories about agent framework from microsoft
+
+🔧 Tool call: github___search_repositories
+   Args: {
+  "query": "agent framework org:microsoft",
+  "perPage": 10
+}
+y
+   ✓ Approved — calling toolbox...
+   ✓ Got result (384 chars)
+   Preview: failed to search repositories with query 'agent framework org:microsoft': GET https://api.github.com/search/repositories?page=1&per_page=10&q=agent+framework+org%3Amicrosoft: 422 Validation Failed [{R...
+
+🔧 Tool call: github___search_repositories
+   Args: {
+  "query": "agent framework microsoft in:name,description,readme",
+  "perPage": 10
+}
+y
+   ✓ Approved — calling toolbox...
+   ✓ Got result (6301 chars)
+   Preview: {"total_count":45053,"incomplete_results":false,"items":[{"id":680120071,"name":"autogen","full_name":"microsoft/autogen","description":"A programming framework for agentic AI","html_url":"https://git...
+
+Agent: Here are some notable Microsoft GitHub repositories related to **AI agent frameworks**:
+
+1. **microsoft/autogen**  
+   https://github.com/microsoft/autogen  
+   - One of Microsoft’s main frameworks for building **LLM-based multi‑agent systems**.  
+   - Supports agent collaboration, tool use, and orchestration.  
+   - Python-first and widely used in research and production.
+
+2. **microsoft/agent-framework**  
+   https://github.com/microsoft/agent-framework  
+   - A newer **official framework for building, orchestrating, and deploying AI agents**.  
+   - Supports **Python and .NET**.  
+   - Focuses on workflows, multi-agent orchestration, and SDK tooling.
+
+3. **microsoft/semantic-kernel**  
+   https://github.com/microsoft/semantic-kernel  
+   - LLM orchestration SDK used to build **AI agents and copilots**.  
+   - Integrates with tools, memory, planning, and plugins.  
+   - Strong support for **C#, Python, and Java**.
+
+4. **microsoft/agent-lightning**  
+   https://github.com/microsoft/agent-lightning  
+   - Framework for **training and optimizing AI agents**, often with reinforcement learning.
+
+5. **microsoft/UFO**  
+   https://github.com/microsoft/UFO  
+   - A **desktop agent system** that can control Windows apps using LLMs.
+
+6. **microsoft/ai-agents-for-beginners**  
+   https://github.com/microsoft/ai-agents-for-beginners  
+   - A learning repo with **12 lessons on building AI agents** using Microsoft tools like AutoGen and Semantic Kernel.
+
+If you want, I can also show:
+- The **differences between AutoGen, Semantic Kernel, and the new Agent Framework**  
+- Which one is **best for building production AI agents in 2026**  
+- Example **agent architecture used by Microsoft**.
+  [model: gpt-5.3-chat-2026-03-03]
+
+You: List the 5 most recent issues in Azure/azure-sdk-for-python
+
+🔧 Tool call: github___list_issues
+   Args: {
+  "owner": "Azure",
+  "repo": "azure-sdk-for-python",
+  "perPage": 5,
+  "orderBy": "CREATED_AT",
+  "direction": "DESC"
+}
+y
+   ✓ Approved — calling toolbox...
+   ✓ Got result (12203 chars)
+   Preview: {"issues":[{"number":47026,"title":"[Cosmos] Partition key range cache: resume from last failed page and move fetch to background","body":"## Summary\n\nThe partition key range cache in `azure-cosmos`...
+
+🔧 Tool call: github___list_issues
+   Args: {
+  "owner": "Azure",
+  "repo": "azure-sdk-for-python",
+  "perPage": 5,
+  "orderBy": "CREATED_AT",
+  "direction": "DESC"
+}
+y
+   ✓ Approved — calling toolbox...
+   ✓ Got result (12203 chars)
+   Preview: {"issues":[{"number":47026,"title":"[Cosmos] Partition key range cache: resume from last failed page and move fetch to background","body":"## Summary\n\nThe partition key range cache in `azure-cosmos`...
+
+  [Same result repeated — stopping loop]
+
+Agent: I fetched the latest issues from **Azure/azure-sdk-for-python** and looked at the most recently created ones. Here are the newest 5 (by creation time):
+
+1. **#47026** — “[Cosmos] Partition key range cache: resume from last failed page and move fetch to background”  
+   - Opened by: tvaron3  
+   - Labels: needs-triage  
+   - Created: 2026‑05‑20  
+   - Summary: Suggests improvements to Cosmos DB partition key range cache behavior, including resuming from a failed page and fetching ranges in the background to reduce request latency.
+
+2. **#47011** — “Syntax warnings when using azure-mgmt-compute in Python 3.12”  
+   - Opened by: synkc  
+   - Labels: question, customer-reported, needs-triage  
+   - Created: 2026‑05‑20  
+   - Summary: Python 3.12 raises `SyntaxWarning: invalid escape sequence '\W'` when importing `azure.mgmt.compute`.
+
+3. **#46986** — “azure-eventhub: mypy reports 16 type errors on main (Build Analyze fails)”  
+   - Opened by: j7nw4r  
+   - Created: 2026‑05‑19  
+   - Summary: CI type-checking fails due to existing mypy errors in the EventHub SDK, affecting PR checks.
+
+4. **#46980** — “azure-monitor-query: LogsQueryClient batch query error handling inconsistency”  
+   - Created: 2026‑05‑19  
+   - Summary: Reports inconsistent error handling behavior when using batch queries with LogsQueryClient.
+
+5. **#46974** — “Storage Blob: issue with upload_blob when using certain content settings”  
+   - Created: 2026‑05‑19  
+   - Summary: User reports unexpected behavior when uploading blobs with specific content configuration.
+
+If you want, I can also pull:
+- the **latest closed issues**
+- the **most commented issues**
+- or **recent pull requests** in that repo.
+  [model: gpt-5.3-chat-2026-03-03]
+
+You: Get the README.md from microsoft/semantic-kernel
+
+🔧 Tool call: github___get_file_contents
+   Args: {
+  "owner": "microsoft",
+  "repo": "semantic-kernel",
+  "path": "README.md"
+}
+y
+   ✓ Approved — calling toolbox...
+   ✓ Got result (15153 chars)
+   Preview: successfully downloaded text file (SHA: 02cab29b8f983d06039752b7326c95ecca7a2891)type='resource' resource=TextResourceContents(uri=AnyUrl('repo://microsoft/semantic-kernel/sha/644eb0a962b048b1ac9fa639...
+
+Agent: Here is the beginning of **README.md** from `microsoft/semantic-kernel`:
+
+:::writing
+# Semantic Kernel
+
+IMPORTANT  
+Semantic Kernel is now **Microsoft Agent Framework**:  
+https://github.com/microsoft/agent-framework
+
+Microsoft Agent Framework (MAF) is the enterprise‑ready successor to Semantic Kernel. It provides production‑ready APIs, long‑term support, multi‑agent orchestration, multi‑provider model support, and cross‑runtime interoperability via A2A and MCP.
+
+Learn more:  
+https://devblogs.microsoft.com/agent-framework/semantic-kernel-and-microsoft-agent-framework/  
+Migration guide:  
+https://learn.microsoft.com/en-us/agent-framework/migration-guide/from-semantic-kernel
+
+Build intelligent AI agents and multi-agent systems with this enterprise-ready orchestration framework.
+
+What is Semantic Kernel?
+
+Semantic Kernel is a model‑agnostic SDK that allows developers to build, orchestrate, and deploy AI agents and multi‑agent systems. It can power simple chat assistants or complex agent workflows.
+
+System Requirements
+- Python 3.10+
+- .NET 10+
+- Java JDK 17+
+- Windows, macOS, Linux
+
+Key Features
+- Model flexibility (OpenAI, Azure OpenAI, Hugging Face, Nvidia, etc.)
+- Agent framework with tools, memory, and planning
+- Multi‑agent orchestration
+- Plugin ecosystem (code functions, prompt templates, OpenAPI, MCP)
+- Vector database integrations (Azure AI Search, Elasticsearch, Chroma)
+- Multimodal support (text, vision, audio)
+- Local model support (Ollama, LMStudio, ONNX)
+- Structured process workflows
+- Enterprise readiness with observability and security
+
+Installation
+
+Set environment variable:
+
+Azure OpenAI:
+export AZURE_OPENAI_API_KEY=AAA....
+
+or OpenAI:
+export OPENAI_API_KEY=sk-...
+
+Python:
+pip install semantic-kernel
+
+.NET:
+dotnet add package Microsoft.SemanticKernel
+dotnet add package Microsoft.SemanticKernel.Agents.Core
+
+Quickstart Python Example
+
+import asyncio
+from semantic_kernel.agents import ChatCompletionAgent
+from semantic_kernel.connectors.ai.open_ai import AzureChatCompletion
+
+async def main():
+    agent = ChatCompletionAgent(
+        service=AzureChatCompletion(),
+        name="SK-Assistant",
+        instructions="You are a helpful assistant.",
+    )
+
+    response = await agent.get_response(
+        messages="Write a haiku about Semantic Kernel."
+    )
+
+    print(response.content)
+
+asyncio.run(main())
+:::
+
+If you want, I can also pull:
+- the **multi‑agent example section**
+- the **plugin architecture**
+- or the **architecture of Microsoft Agent Framework that replaced Semantic Kernel**.
+  [model: gpt-5.3-chat-2026-03-03]
+
+You: exit
+Goodbye!

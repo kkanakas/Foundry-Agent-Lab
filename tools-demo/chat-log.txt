@@ -1,0 +1,65 @@
+✓ Agent "Weather-Agent" created
+  Model: model-router
+  Tools: get_weather
+
+============================================================
+  Tools Demo — Function Calling Demo
+============================================================
+
+  Agent: Weather-Agent
+  Tools: get_weather
+
+  Try: "What's the weather in Seattle?"
+  Type 'exit' or 'quit' to end the session.
+
+------------------------------------------------------------
+
+You: Who wrote Hamlet?
+
+Agent: *Hamlet* was written by **William Shakespeare**.
+  [model: gpt-5.4-mini-2026-03-17]
+
+You: What's the weather in Seattle today?
+  🔧 Tool called: get_weather("Seattle")
+  🔧 Result: 65°F, Overcast 
+
+Agent: Here’s the weather for **Seattle** today:
+
+- **Condition:** Overcast
+- **Temperature:** **18°C** / **65°F**
+- **Humidity:** **46%**
+- **Wind:** **12 kph**
+
+If you want, I can also help you compare it with another city.
+  [model: gpt-5.4-mini-2026-03-17]
+
+You: How about Tokyo?
+  🔧 Tool called: get_weather("Tokyo")
+  🔧 Result: 68°F, Moderate or heavy rain shower
+
+Agent: Here’s the weather for **Tokyo** today:
+
+- **Condition:** Moderate or heavy rain shower
+- **Temperature:** **20°C** / **68°F**
+- **Humidity:** **97%**
+- **Wind:** **19 kph**
+
+If you’d like, I can compare **Seattle vs. Tokyo** side by side.
+  [model: gpt-5.4-mini-2026-03-17]
+
+You: Compare them.
+
+Agent: Quick comparison for today:
+
+- Condition: Seattle — Overcast. Tokyo — Moderate/heavy rain showers.
+- Temperature: Seattle — 18°C / 65°F. Tokyo — 20°C / 68°F. (Tokyo ~2°C / ~3–4°F warmer.)
+- Humidity: Seattle — 46%. Tokyo — 97% (much more humid/wet).
+- Wind: Seattle — 12 kph. Tokyo — 19 kph (Tokyo slightly windier).
+
+Bottom line: Tokyo is wetter and much more humid (bring an umbrella/rain jacket); Seattle is cooler and simply overcast (light jacket should be fine).
+  [model: gpt-5-mini-2025-08-07]
+
+You: exit
+
+✓ Agent "Weather-Agent" deleted.
+Goodbye!

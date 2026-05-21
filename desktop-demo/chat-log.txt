@@ -1,0 +1,34 @@
+✓ Agent "Desktop-Agent" created
+  Model: model-router
+
+You: Hello! What can you help me with?
+
+Agent: Hi! I can help with a lot of things, including:
+
+- Answering questions and explaining concepts
+- Writing and editing emails, essays, posts, and documents
+- Summarizing text or extracting key points
+- Brainstorming ideas, names, outlines, and plans
+- Helping with coding, debugging, and technical explanations
+- Translating or rephrasing text
+- Solving math, logic, and word problems
+- Giving general advice on studying, productivity, or organization
+
+If you want, tell me what you’re working on and I’ll jump in.
+  [model: gpt-5.4-mini-2026-03-17]
+
+You: Three fun facts about Seattle?
+
+Agent: 1. **Birthplace of Starbucks**: The original Starbucks opened in 1971 at Pike Place Market, and Seattle still boasts more coffee shops per capita than any other U.S. city.
+
+2. **Space Needle Icon**: Built for the 1962 World's Fair, the 605-foot Space Needle was once the tallest structure west of the Mississippi River and rotates 360 degrees from its top-floor restaurant.
+
+3. **Grunge Music Capital**: Seattle gave birth to the grunge rock scene in the 1990s, launching iconic bands like Nirvana, Pearl Jam, and Soundgarden.
+  [model: grok-4-1-fast-reasoning]
+
+You: Summarize what we talked about.
+
+Agent: We started with a greeting and I explained the kinds of things I can help with. Then you asked for three fun facts about Seattle, and I shared facts about Starbucks’ origins, the Space Needle, and Seattle’s role in the grunge music scene.
+  [model: gpt-5.2-chat-2025-12-11]
+
+✓ Agent "Desktop-Agent" deleted.

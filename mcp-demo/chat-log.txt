@@ -1,0 +1,64 @@
+✓ Agent "MCP-Agent" created
+  Model: model-router
+  Tools: MCP (github)
+  Approval: always (you review each tool call)
+
+============================================================
+  MCP Demo — Model Context Protocol Integration
+============================================================
+
+  Agent: MCP-Agent
+  Tools: MCP server (github)
+  Approval: required for each tool call
+
+  Try: "What is my GitHub username?"
+  Type 'exit' or 'quit' to end the session.
+
+------------------------------------------------------------
+
+You: What is my GitHub username?
+
+🔐 MCP tool approval requested:
+   Server: github
+   Tool:   get_me
+   Args:   "{}"
+y
+   ✓ Approved
+
+Agent: Your GitHub username is octocat.
+  [model: gpt-5-mini-2025-08-07]
+
+You: List my most recent repositories.
+
+🔐 MCP tool approval requested:
+   Server: github
+   Tool:   search_repositories
+   Args:   "{\"query\": \"user:octocat\", \"sort\": \"updated\", \"order\": \"desc\", \"perPage\": 10, \"page\": 1, \"minimal_output\": true}"
+y
+   ✓ Approved
+
+Agent: Your most recently updated repositories are:
+
+• hello-world — Ruby — updated 2026‑05‑07  
+https://github.com/octocat/hello-world
+
+• Spoon-Knife — HTML — updated 2026‑04‑02  
+https://github.com/octocat/Spoon-Knife
+
+You currently have 2 public repositories. If you want, I can also show the latest commits, open issues, or activity for either repo.
+  [model: gpt-5.3-chat-2026-03-03]
+
+You: What'
+
+Agent: Looks like your message got cut off — what were you going to ask?
+  [model: gpt-5.3-chat-2026-03-03]
+
+You: What's the capital of Germany?
+
+Agent: The capital of Germany is Berlin.
+  [model: gpt-5.4-mini-2026-03-17]
+
+You: exit
+
+✓ Agent "MCP-Agent" deleted.
+Goodbye!

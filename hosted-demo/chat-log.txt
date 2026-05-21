@@ -1,0 +1,21 @@
+============================================================
+  Hosted Demo — Self-Hosted Agent (Responses Protocol)
+============================================================
+
+  Server: http://localhost:8088/responses
+
+  Type your message and press Enter to chat.
+  Type 'exit' or 'quit' to end the session.
+
+------------------------------------------------------------
+
+You: Hello, my name is John!
+
+Agent: Hello, John! How can I assist you today?
+
+You: What's my name?
+
+Agent: Your name is John.
+
+You: exit
+Goodbye!

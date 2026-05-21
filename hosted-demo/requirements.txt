@@ -1,0 +1,5 @@
+azure-ai-agentserver-responses==1.0.0b3
+azure-identity
+openai
+python-dotenv
+debugpy

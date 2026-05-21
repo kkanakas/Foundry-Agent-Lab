@@ -1,0 +1,47 @@
+✓ Agent "Hello-Agent" created
+  Model: model-router
+
+============================================================
+  Hello Demo — Azure AI Foundry Chat Demo
+============================================================
+
+  Agent: Hello-Agent
+
+  Type your message and press Enter to chat.
+  Type 'exit' or 'quit' to end the session.
+
+------------------------------------------------------------
+
+You: What is the capital of France?
+
+Agent: The capital of France is Paris.
+  [model: gpt-5-mini-2025-08-07]
+
+You: Tell me 3 fun facts about it.
+
+Agent: Sure — here are 3 fun facts about Paris:
+
+1. **The Eiffel Tower can grow in summer**  
+   Because metal expands in heat, the Eiffel Tower can become a few inches taller during hot weather.
+
+2. **Paris has only one stop sign in the whole city**  
+   The city is famous for relying more on traffic lights, roundabouts, and priority rules than stop signs.
+
+3. **There’s a hidden vineyard in Paris**  
+   In the Montmartre neighborhood, there’s a small working vineyard called **Clos Montmartre** that still produces wine.
+
+If you want, I can also give you **3 more unusual facts** or **3 famous landmarks in Paris**.
+  [model: gpt-5.4-2026-03-05]
+
+You: Summarize what we talked about.
+
+Agent: We talked about France’s capital, which is **Paris**, and then I shared **three fun facts** about the city:  
+- The **Eiffel Tower grows slightly in summer** due to heat expansion.  
+- Paris has **only one stop sign**.  
+- There is a **hidden vineyard in Montmartre** that still produces wine.
+  [model: gpt-5.2-chat-2025-12-11]
+
+You: exit
+
+✓ Agent "Hello-Agent" deleted.
+Goodbye!

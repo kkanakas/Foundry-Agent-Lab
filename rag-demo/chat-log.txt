@@ -1,0 +1,57 @@
+Creating vector store...
+Uploading sample document...
+  ✓ File uploaded and indexed (status: completed)
+  ✓ Vector store created: vs_abc123
+
+✓ Agent "RAG-Agent" created
+  Model: model-router
+  Tools: file_search (vector store: vs_abc123)
+  Document: employee-handbook.md
+
+============================================================
+  RAG Demo — File Search / RAG Demo
+============================================================
+
+  Agent: RAG-Agent
+  Tools: file_search (Contoso Employee Handbook)
+
+  Try: "How many PTO days do new employees get?"
+  Type 'exit' or 'quit' to end the session.
+
+------------------------------------------------------------
+
+You: How many PTO days do new employees get?
+
+Agent: New employees at Contoso Electronics receive **15 days of PTO per year**. 
+
+For reference from the policy:
+- New employees: **15 days PTO per year**
+- After 3 years: **20 days PTO per year**
+- After 7 years: **25 days PTO per year**
+- Additionally, employees receive **10 company‑observed holidays per year**. 
+  [model: gpt-5.3-chat-2026-03-03]
+
+You: What's the 401k match?
+
+Agent: Contoso Electronics offers a **401(k) match of 100% of employee contributions up to 6% of salary**. 
+
+Additional details from the policy:
+- **Employee contributions:** vest immediately  
+- **Employer match:** **3‑year cliff vesting** (you become fully vested after 3 years)
+  [model: gpt-5.3-chat-2026-03-03]
+
+You: Summarize the travel policy.
+
+Agent: Here’s a summary of the Contoso Electronics travel policy:
+
+- **Domestic flights:** Economy class, and they must be booked **14+ days in advance**.
+- **International flights:** Business class is allowed for flights **over 6 hours**.
+- **Hotel limits:** Up to **$200/night domestic** and **$300/night international**.
+- **Meal limits:** Up to **$75/day domestic** and **$100/day international**.
+- **Pre-approval:** Required for **all travel over $1,000**. 
+  [model: gpt-5.4-2026-03-05]
+
+You: exit
+
+✓ Agent "RAG-Agent" deleted.
+Goodbye!
