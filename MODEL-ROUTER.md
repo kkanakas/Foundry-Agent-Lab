@@ -11,7 +11,7 @@ Building AI agents today means choosing from 20+ available models — GPT-5 vari
 
 **Model router** eliminates this entirely. You deploy one endpoint (`model-router`), write zero routing code, and the router selects the optimal model for each request in real time — balancing quality against cost.
 
-This article presents **empirical evidence** from progressively complex Azure AI Foundry agent demos, all using the same `model-router` deployment. We observe which models the router selects and why.
+This article presents **empirical evidence** from progressively complex Microsoft Foundry agent demos, all using the same `model-router` deployment. We observe which models the router selects and why.
 
 > **Reference:** [Model Router for Microsoft Foundry](https://learn.microsoft.com/en-us/azure/foundry/openai/concepts/model-router) — official conceptual documentation.
 

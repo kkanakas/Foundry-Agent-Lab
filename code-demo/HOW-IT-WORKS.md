@@ -4,7 +4,7 @@
 
 ```
 ┌───────────────────┐    ┌─────────────┐    ┌──────────────────────────────┐
-│  Browser          │    │  Gradio     │    │  Azure AI Foundry             │
+│  Browser          │    │  Gradio     │    │  Microsoft Foundry            │
 │  (localhost:7860) │◄──►│  Server     │    │                               │
 │                   │    │  (chat.py)  │    │  ┌─────────────────┐          │
 │  Chat UI          │    │      │      │    │  │  Code-Agent     │          │

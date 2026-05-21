@@ -4,7 +4,7 @@
 
 ```
 ┌──────────────────────────────┐       ┌──────────────────────┐
-│  Desktop Window (tkinter)    │       │  Azure AI Foundry     │
+│  Desktop Window (tkinter)    │       │  Microsoft Foundry    │
 │                              │       │                       │
 │  ┌────────────────────────┐  │       │  ┌─────────────────┐  │
 │  │  ScrolledText (chat)   │  │       │  │  Prompt Agent   │  │

@@ -1,7 +1,7 @@
 # Microsoft Foundry Agent Demos
 
 A progressive series of demos showing how to build AI agents with the
-[Azure AI Foundry SDK](https://learn.microsoft.com/azure/ai-studio/).
+[Microsoft Foundry SDK](https://learn.microsoft.com/azure/ai-studio/).
 Each demo builds on the previous one, adding one new concept at a time.
 
 ## Demo Summary
@@ -26,7 +26,7 @@ All agents in this repo use **`model-router`** as their model deployment. No mod
 MODEL_DEPLOYMENT=model-router
 ```
 
-Model Router is an Azure AI Foundry capability that intelligently routes each request to the optimal model in real time — balancing quality, latency, and cost. A simple greeting might be handled by a lightweight model, while a complex tool-calling chain gets routed to a frontier model. You get the best of all available models without deploying or managing any of them individually.
+Model Router is a Microsoft Foundry capability that intelligently routes each request to the optimal model in real time — balancing quality, latency, and cost. A simple greeting might be handled by a lightweight model, while a complex tool-calling chain gets routed to a frontier model. You get the best of all available models without deploying or managing any of them individually.
 
 **Key benefits observed across these demos:**
 - **Zero model selection overhead** — no need to evaluate which model fits each agent
@@ -54,25 +54,80 @@ For a deep-dive analysis showing which models the router selected for each demo 
 ## Prerequisites
 
 - **Python 3.10+** with a virtual environment
-- **Azure subscription** with an AI Foundry project
+- **Azure subscription** with a Microsoft Foundry project
 - **Azure CLI** (`az login` for authentication)
 
 ## One-Time Setup
 
+### 1. Clone the repository
+
 ```cmd
-git clone <this-repo>
-cd my-agent-demos
+git clone https://github.com/microsoft-foundry/Foundry-Agent-Lab.git
+cd Foundry-Agent-Lab
+```
+
+### 2. Create a Python virtual environment
+
+A virtual environment isolates this project's dependencies from your global Python installation.
+
+**Windows (Command Prompt or PowerShell):**
+```cmd
 python -m venv .venv
-.venv\Scripts\activate
+```
+
+**macOS / Linux:**
+```bash
+python3 -m venv .venv
+```
+
+> **Tip:** Verify your Python version first with `python --version`. Python 3.10 or higher is required.
+
+### 3. Activate the virtual environment
+
+You must activate the venv before installing packages or running any demo.
+
+| Shell | Command |
+|-------|---------|
+| Windows Command Prompt | `.venv\Scripts\activate.bat` |
+| Windows PowerShell | `.venv\Scripts\Activate.ps1` |
+| macOS / Linux (bash/zsh) | `source .venv/bin/activate` |
+
+Your prompt will show `(.venv)` when the environment is active.
+
+> **PowerShell note:** If you see an execution policy error, run `Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned` once, then retry.
+
+### 4. Install dependencies
+
+```cmd
 pip install -r requirements.txt
 ```
 
-Then in each demo folder you plan to run, copy `.env.sample` to `.env` and
-fill in your Azure AI Foundry project endpoint:
+All demos share this single install — no per-demo setup required.
+
+### 5. Configure each demo
+
+In each demo folder you plan to run, copy `.env.sample` to `.env` and fill in
+your Microsoft Foundry project endpoint:
+
+```cmd
+copy hello-demo\.env.sample hello-demo\.env
+```
+
+Then edit `.env` with your values:
 
 ```
 PROJECT_ENDPOINT=https://your-resource.ai.azure.com/api/projects/your-project
-MODEL_DEPLOYMENT=your-model-deployment
+MODEL_DEPLOYMENT=model-router
+```
+
+> Find your `PROJECT_ENDPOINT` on the **Overview** page of your Foundry project in the Azure portal.
+
+### Deactivating the virtual environment
+
+When you are done, deactivate with:
+
+```cmd
+deactivate
 ```
 
 ## Running a Demo
@@ -169,3 +224,19 @@ All demos share one `requirements.txt`:
 - `requests` — HTTP calls (weather API in Demo 1)
 - `gradio` — Web UI (Demo 4 only)
 - `azure-ai-agentserver-responses` — Hosted agent server (Demo 8 only)
+
+## Contributing
+
+Contributions are welcome! Please read [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines on how to
+submit pull requests, report issues, and follow the Microsoft Open Source Code of Conduct.
+
+## Security
+
+This repo uses `DefaultAzureCredential` — no API keys in code. Never commit `.env` files.
+To report a security vulnerability, see [SECURITY.md](SECURITY.md).
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
+
+Copyright (c) 2026 Microsoft Corporation.

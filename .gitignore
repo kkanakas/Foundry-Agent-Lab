@@ -14,16 +14,36 @@ chat-log.txt
 __pycache__/
 *.py[cod]
 *$py.class
+*.pyo
+*.pyd
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+*.egg
+pip-wheel-metadata/
+.eggs/
+
+# Test & coverage
+.pytest_cache/
+.coverage
+htmlcov/
+*.cover
 
 # Virtual environment
 .venv/
 venv/
 ENV/
+env/
 
 # IDE
 .vscode/
 .idea/
+*.swp
+*.swo
 
 # OS
 .DS_Store
 Thumbs.db
+desktop.ini

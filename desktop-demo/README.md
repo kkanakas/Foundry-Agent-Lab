@@ -13,7 +13,7 @@ az login                            (once per session)
 
 | File | Purpose |
 |------|---------|
-| `create_agent.py` | Registers the agent in Azure AI Foundry |
+| `create_agent.py` | Registers the agent in Microsoft Foundry |
 | `chat.py` | Tkinter GUI chat window |
 | `demo.bat` | Activates venv, runs both scripts in sequence |
 | `reset.bat` | Deletes the agent (use if demo crashes) |

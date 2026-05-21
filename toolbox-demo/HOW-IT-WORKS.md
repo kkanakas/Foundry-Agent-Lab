@@ -34,7 +34,7 @@ This demo follows the **MAF consumption pattern** from the
 
 ## What is a Toolbox?
 
-A **Toolbox** is a managed resource in Azure AI Foundry that bundles multiple
+A **Toolbox** is a managed resource in Microsoft Foundry that bundles multiple
 tools into a single, versioned, MCP-compatible endpoint. Think of it as a
 "tool registry" with these properties:
 

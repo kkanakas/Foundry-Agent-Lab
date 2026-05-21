@@ -1,6 +1,6 @@
 # Demo 0: Hello Demo (CLI Chat)
 
-The simplest Azure AI Foundry agent — a prompt agent you chat with in the terminal.
+The simplest Microsoft Foundry agent — a prompt agent you chat with in the terminal.
 
 ## Quick Start
 
@@ -13,7 +13,7 @@ az login                        (once per session)
 
 | File | Purpose |
 |------|---------|
-| `create_agent.py` | Registers the agent in Azure AI Foundry |
+| `create_agent.py` | Registers the agent in Microsoft Foundry |
 | `chat.py` | Interactive terminal chat loop |
 | `demo.bat` | Activates venv, runs both scripts in sequence |
 | `reset.bat` | Deletes the agent (use if demo crashes) |

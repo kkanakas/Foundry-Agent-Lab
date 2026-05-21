@@ -128,7 +128,7 @@ To deploy your agent to Microsoft Foundry:
 
 ### Azure OpenAI Permission Denied (401)
 
-The identity running the agent does not have the required RBAC roles on the Azure AI Foundry project. Assign the following roles:
+The identity running the agent does not have the required RBAC roles on the Microsoft Foundry project. Assign the following roles:
 
 - **Cognitive Services OpenAI User**
 - **Azure AI User**

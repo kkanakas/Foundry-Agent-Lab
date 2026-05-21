@@ -1,6 +1,6 @@
 # Hello Demo — Specification
 
-An interactive terminal chatbot powered by Azure AI Foundry Agent Service.
+An interactive terminal chatbot powered by Microsoft Foundry Agent Service.
 Based on the [official quickstart](https://learn.microsoft.com/en-us/azure/foundry/agents/quickstarts/prompt-agent?tabs=python).
 
 ## Overview
@@ -21,7 +21,7 @@ then lets you chat with it in an interactive terminal loop.
              │  Azure Identity (DefaultAzureCredential)
              ▼
 ┌─────────────────────────────────────────────────────┐
-│  Azure AI Foundry Project                           │
+│  Microsoft Foundry Project                          │
 │                                                     │
 │  ┌───────────────┐     ┌──────────────────────┐     │
 │  │ Prompt Agent  │◄────│ PromptAgentDefinition│     │
@@ -78,7 +78,7 @@ $ python create_agent.py
 
 ```
 $ python chat.py
-Connected to Azure AI Foundry. Conversation started.
+Connected to Microsoft Foundry. Conversation started.
 Type your message (or "exit" to quit).
 
 You: What is the largest ocean?

@@ -4,7 +4,7 @@
 
 ```
 ┌─────────────┐         ┌──────────────────────┐
-│  Your       │         │  Azure AI Foundry     │
+│  Your       │         │  Microsoft Foundry    │
 │  Terminal   │         │                       │
 │             │         │  ┌─────────────────┐  │
 │  chat.py ───┼────────►│  │  Prompt Agent   │  │

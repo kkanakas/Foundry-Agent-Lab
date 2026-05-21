@@ -4,7 +4,7 @@
 
 ```
 ┌─────────────┐         ┌───────────────────────┐       ┌─────────────┐
-│  Your       │         │  Azure AI Foundry     │       │  wttr.in    │
+│  Your       │         │  Microsoft Foundry    │       │  wttr.in    │
 │  Terminal   │         │                       │       │  Weather API│
 │             │         │  ┌─────────────────┐  │       │             │
 │  chat.py ───┼────────►│  │  Weather-Agent  │  │       │             │
