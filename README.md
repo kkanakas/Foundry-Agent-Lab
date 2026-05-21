@@ -1,5 +1,7 @@
 # Microsoft Foundry Agent Demos
 
+![Banner](./blog-foundry-agent-lab-banner.png)
+
 A progressive series of demos showing how to build AI agents with the
 [Microsoft Foundry SDK](https://learn.microsoft.com/azure/ai-studio/).
 Each demo builds on the previous one, adding one new concept at a time.
