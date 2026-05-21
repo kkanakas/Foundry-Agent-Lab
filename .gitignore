@@ -7,6 +7,9 @@
 # Code interpreter output (downloaded charts/images)
 output/
 
+# Chat logs (generated at runtime)
+chat-log.txt
+
 # Python
 __pycache__/
 *.py[cod]
