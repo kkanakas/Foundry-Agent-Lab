@@ -58,6 +58,8 @@ For a deep-dive analysis showing which models the router selected for each demo 
 - **Python 3.10+** with a virtual environment
 - **Azure subscription** with a Microsoft Foundry project
 - **Azure CLI** (`az login` for authentication)
+- **zsh** for the macOS/Linux shell scripts (included with macOS; install it
+  separately on Linux if needed)
 
 ## One-Time Setup
 
@@ -78,7 +80,7 @@ python -m venv .venv
 ```
 
 **macOS / Linux:**
-```bash
+```zsh
 python3 -m venv .venv
 ```
 
@@ -92,7 +94,7 @@ You must activate the venv before installing packages or running any demo.
 |-------|---------|
 | Windows Command Prompt | `.venv\Scripts\activate.bat` |
 | Windows PowerShell | `.venv\Scripts\Activate.ps1` |
-| macOS / Linux (bash/zsh) | `source .venv/bin/activate` |
+| macOS / Linux (zsh) | `source .venv/bin/activate` |
 
 Your prompt will show `(.venv)` when the environment is active.
 
@@ -117,7 +119,7 @@ copy hello-demo\.env.sample hello-demo\.env
 
 On macOS/Linux:
 
-```bash
+```zsh
 cp hello-demo/.env.sample hello-demo/.env
 ```
 
@@ -150,7 +152,7 @@ az login                        (once per session)
 
 On macOS/Linux:
 
-```bash
+```zsh
 ./0-hello-demo.sh
 ./1-tools-demo.sh
 ./2-desktop-demo.sh
@@ -160,6 +162,9 @@ On macOS/Linux:
 Each launcher runs the demo end-to-end using Python from the repository's
 `.venv`, so activation is not required after dependencies are installed.
 Scripts also work when launched by absolute path from another directory.
+The `.sh` filenames are retained for compatibility, but all shell scripts use
+zsh. Run them directly as shown above, or with `zsh script.sh`, not
+`bash script.sh` or `sh script.sh`.
 The desktop demo requires Tkinter and a graphical desktop session.
 The hosted demo requires port 8088 to be free and stops its server when chat
 exits or the launcher is interrupted.
@@ -174,7 +179,7 @@ To capture the full console session to a text file (for slides/docs):
 
 On macOS/Linux:
 
-```bash
+```zsh
 ./0-hello-demo.sh log
 ```
 
@@ -244,10 +249,19 @@ tools-demo\reset.bat
 
 On macOS/Linux:
 
-```bash
+```zsh
 ./hello-demo/reset.sh
 ./tools-demo/reset.sh
 ```
+
+### Shell smoke tests
+
+Run `zsh tests/shell-smoke.zsh` from the repository root to check syntax and
+launcher behavior using a temporary fixture and a mock Python executable.
+The tests cover paths containing spaces, launching from another directory,
+logging, missing virtual environments, failure propagation, resets, and hosted
+server cleanup. They do not connect to Azure, run the Python applications,
+or delete real resources.
 
 ## Dependencies
 
