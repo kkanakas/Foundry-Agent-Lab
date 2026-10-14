@@ -41,13 +41,13 @@ For a deep-dive analysis showing which models the router selected for each demo 
 ## Features
 
 - **Progressive complexity** — each demo adds exactly one new concept, building on the previous ones
-- **One-command launch** — numbered `.bat` files at the root run everything end-to-end (venv activation, agent creation, chat)
+- **One-command launch** — numbered `.bat` files (Windows) and `.sh` files (macOS/Linux) at the root run everything end-to-end using the shared virtual environment
 - **Per-demo configuration** — each demo has its own `.env` file with sensible defaults; change one demo without affecting others
 - **Session logging** — append `log` to any launch command to capture the full session (input + output) to `chat-log.txt` for slides and documentation
 - **GUI and web logging** — desktop (Tkinter) and web (Gradio) demos also log conversations, not just terminal demos
 - **Three UX modes** — terminal, desktop, and web interfaces show that the same agent works with any presentation layer
 - **Built-in vs function tools** — demos contrast client-side tool execution (Demo 1) with server-side built-in tools (Demos 3–5), open-standard MCP tools (Demo 6), and centralized toolbox governance (Demo 7)
-- **Clean reset** — every demo includes a `reset.bat` to delete agents and resources, so demos are repeatable
+- **Clean reset** — demos 0–7 include `reset.bat` (Windows) and `reset.sh` (macOS/Linux) to delete agents and resources; the hosted demo stops its local server when chat exits
 - **Presenter guide** — the root `DEMO-GUIDE.md` covers recommended demo order, time-budget combos, recovery tips, and key messages to land
 - **Demo scripts** — every folder includes a `DEMO-SCRIPT.md` with step-by-step talking points and suggested prompts, so presenters can walk through each demo confidently
 - **Self-contained documentation** — each demo folder has its own README, HOW-IT-WORKS, and DEMO-SCRIPT
@@ -115,6 +115,12 @@ your Microsoft Foundry project endpoint:
 copy hello-demo\.env.sample hello-demo\.env
 ```
 
+On macOS/Linux:
+
+```bash
+cp hello-demo/.env.sample hello-demo/.env
+```
+
 Then edit `.env` with your values:
 
 ```
@@ -142,7 +148,21 @@ az login                        (once per session)
 ...
 ```
 
-Each numbered `.bat` file activates the venv and runs the demo end-to-end.
+On macOS/Linux:
+
+```bash
+./0-hello-demo.sh
+./1-tools-demo.sh
+./2-desktop-demo.sh
+# Continue with the other numbered .sh launchers.
+```
+
+Each launcher runs the demo end-to-end using Python from the repository's
+`.venv`, so activation is not required after dependencies are installed.
+Scripts also work when launched by absolute path from another directory.
+The desktop demo requires Tkinter and a graphical desktop session.
+The hosted demo requires port 8088 to be free and stops its server when chat
+exits or the launcher is interrupted.
 
 ### Logging Output
 
@@ -150,6 +170,12 @@ To capture the full console session to a text file (for slides/docs):
 
 ```cmd
 0-hello-demo log
+```
+
+On macOS/Linux:
+
+```bash
+./0-hello-demo.sh log
 ```
 
 This creates `hello-demo\chat-log.txt` with the complete session transcript
@@ -207,13 +233,20 @@ Each demo has its own `.env` file with three variables:
 
 ## Cleanup
 
-Each demo folder includes a `reset.bat` that deletes the agent (and any
-associated resources like vector stores). Use it if a demo crashes mid-run
+Demo folders 0–7 include `reset.bat` and `reset.sh` scripts that delete the
+agent (and associated resources like vector stores). Use them if a demo crashes mid-run
 or you want a clean slate:
 
 ```cmd
 hello-demo\reset.bat
 tools-demo\reset.bat
+```
+
+On macOS/Linux:
+
+```bash
+./hello-demo/reset.sh
+./tools-demo/reset.sh
 ```
 
 ## Dependencies
