@@ -3,6 +3,7 @@
 
 # Vector store IDs (created at runtime)
 .vector_store_id
+.vector_store_files.json
 
 # Code interpreter output (downloaded charts/images)
 output/
